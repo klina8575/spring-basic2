@@ -247,6 +247,18 @@ public class ItemRepositoryTest {
 
     @Disabled
     @Test
+    @DisplayName("퀴즈2-3")
+    public void getIdSeven() {
+        this.createItemList();
+        List<Item> itemList= itemRepository.getIdSeven(7L);
+
+        for(Item item : itemList) {
+            System.out.println(item.toString());
+        }
+    }
+
+    @Disabled
+    @Test
     @DisplayName("querydsl 조회 테스트")
     public void queryDslTest() {
         this.createItemList();

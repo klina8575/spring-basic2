@@ -51,8 +51,11 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
     List<Item> getPrice(@Param("price") int price);
 
     //퀴즈 2-2
-    @Query("select i from Item i where i.itemNm = :itemNm and"
-            + " i.itemSellStatus = :sell")
+    @Query("select i from Item i where i.itemNm = :itemNm and i.itemSellStatus = :sell")
     List<Item> getItemNmAndItemSellStatus(@Param("itemNm") String itemNm,
                                           @Param("sell") ItemSellStatus sell);
+
+    //퀴즈 2-3
+    @Query("select i from Item i where i.id = :id")
+    List<Item> getIdSeven(@Param("id") Long id);
 }
